@@ -56,9 +56,13 @@
 	Content 		= Параметры.Content;
 	ДокументСсылка 	= Параметры.ДокументСсылка;
 	
-	Если DocumentType = "UniversalTransferDocument" Тогда
+	Если DocumentType = "UniversalTransferDocument" и ТипЗнч(ДокументСсылка) = Тип("ДокументСсылка.РеализацияТоваровУслуг") Тогда
 		
-		ОбновитьContent_UniversalTransferDocument(Content, ДокументСсылка);
+		ОбновитьContent_UniversalTransferDocument_РеализацияТоваровУслуг(Content, ДокументСсылка);
+		
+	ИначеЕсли DocumentType = "UniversalTransferDocument" и ТипЗнч(ДокументСсылка) = Тип("ДокументСсылка.СчетФактураВыданный") Тогда
+		
+		ОбновитьContent_UniversalTransferDocument_СчетФактураВыданный(Content, ДокументСсылка);
 		
 	КонецЕсли;	
 
@@ -66,7 +70,11 @@
 	
 КонецФункции // ОбработатьСобытиеПослеЗаполненияКонтента()
 
-Процедура ОбновитьContent_UniversalTransferDocument(Content, ДокументСсылка)
+Процедура ОбновитьContent_UniversalTransferDocument_РеализацияТоваровУслуг(Content, ДокументСсылка)
+	
+КонецПроцедуры
+
+Процедура ОбновитьContent_UniversalTransferDocument_СчетФактураВыданный(Content, ДокументСсылка)
 	
 КонецПроцедуры
 
