@@ -56,14 +56,9 @@
 	Content 		= Параметры.Content;
 	ДокументСсылка 	= Параметры.ДокументСсылка;
 	
-	Если DocumentType = "XmlAcceptanceCertificate" Тогда
+	Если DocumentType = "UniversalTransferDocument" Тогда
 		
-		ОбновитьContent_XmlAcceptanceCertificate(Content, ДокументСсылка);
-		
-		
-	ИначеЕсли DocumentType = "Invoice" Тогда
-		
-		ОбновитьContent_Invoice(Content, ДокументСсылка);
+		ОбновитьContent_UniversalTransferDocument(Content, ДокументСсылка);
 		
 	КонецЕсли;	
 
@@ -71,11 +66,10 @@
 	
 КонецФункции // ОбработатьСобытиеПослеЗаполненияКонтента()
 
-Процедура ОбновитьContent_XmlAcceptanceCertificate(Content, ДокументСсылка)
+Процедура ОбновитьContent_UniversalTransferDocument(Content, ДокументСсылка)
+	
 КонецПроцедуры
 
-Процедура ОбновитьContent_Invoice(Content, ДокументСсылка)
-КонецПроцедуры
 
 //Процедура предназначена для изменения содержания нового (еще не записанного в базу) счета-фактуры.
 Процедура ОбработатьСобытиеПослеСозданияСчетФактуры(Параметры)
